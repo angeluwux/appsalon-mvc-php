@@ -1,0 +1,99 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.citas{
+    list-style: none;
+    padding: 0;
+    li{
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+        span,.servicio{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+        a{
+            color: v.$verde;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    a{
+        width: 100%;
+        background-color: v.$amarillo;
+        color: v.$blanco;
+        font-weight: v.$bold;
+        text-align: center;
+        padding: 1rem 0;
+        transition-property: background-color;
+        transition-duration: .3s;
+
+        &:hover {
+            background-color: darken(v.$amarillo, 10%);
+            cursor: pointer;
+        }
+    }
+
+    @include m.tablet() {
+        flex-direction: row;
+    }
+}
+
+.servicios{
+    @extend .citas;
+}
+
+.act {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @include m.tablet() {
+        flex-direction: row;
+        gap: 4rem;
+    }
+
+    .actBoton {
+        width: 100%;
+        text-align: center;
+        border: none;
+        color: v.$blanco;
+        font-weight: v.$bold;
+        padding: 1rem 0;
+        border-radius: 1rem;
+        transition-property: background-color;
+        transition-duration: .3s;
+
+        @include m.tablet() {
+            width: 20rem;
+        }
+
+        &.actualizar {
+            background-color: v.$verde;
+            
+            &:hover {
+                background-color: darken(v.$verde, 10%);
+                cursor: pointer;
+            }
+        }
+
+        &.eliminar {
+            background-color: v.$rojo;
+            
+            &:hover {
+                background-color: darken(v.$rojo, 10%);
+                cursor: pointer;
+            }
+        }
+    }
+}

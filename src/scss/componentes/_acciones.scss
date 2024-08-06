@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.acciones{
+    display: flex;
+    gap: 2rem;
+    margin-top: v.$separacion;
+    flex-direction: column;
+    @include m.tablet{
+        flex-direction: row;
+        justify-content: space-between
+    }
+    a{
+        color: v.$blanco;
+        text-align: center;
+    }
+}

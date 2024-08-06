@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(()=>{borrarAlertas()}));let alerta=document.querySelectorAll(".alerta");function borrarAlertas(){setTimeout((()=>{alerta.forEach((e=>{e.remove()}))}),3e3)}
